@@ -7,13 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const textArea = document.querySelector('#text-area')
     const btn = document.querySelector('#btn')
     const panel = document.querySelector('.panel')
+    const wordsContainer = document.querySelector('.words-container')
     
     let words = []
     let word = ''
     let textPanel = ''
     let wordsTextArea = ''
-    let ignored_chars = ['!', '?', ',', '.', ' ', '-', '"']
-    let allowed_chars = ['!', '?', ',', '.', ' ', '-', '"']
+    let ignored_chars = ['!', '?', ',', '.', ' ', '-', '"', ':', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    let allowed_chars = ['!', '?', ',', '.', ' ', '-', '"', ':', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
     const testValues = (element, conective, comparison_symbol, values_array) => {
         let return_value = false
@@ -57,6 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return return_value
     }
 
+    const render_words = (words) => {
+        words.forEach(word => {
+            
+            wordsContainer.innerHTML += `<span>${word}</span>`
+        })
+    }
 
     // Need to be fixed: the last word isn't being saved when the text is big
     function getWords(array){
@@ -90,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         textPanel = words.length
         panel.innerHTML = `Count: ${textPanel}`
         console.log(words)
+        render_words(words)
         words = []
     })
     

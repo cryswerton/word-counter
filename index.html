@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Words Counter</title>
 </head>
-<body>
-    <form>
-        <label>Text:</label> <br><br>
-        <textarea id="text-area" rows="4" cols="50"></textarea>
+<body class="container">
+    <div class="content d-flex flex-column">
+        <form class="col-12">
+            <label>Text:</label> <br><br>
+            <textarea id="text-area" rows="4" cols="50">
+                Summer: Grandpa Rick must have some secret lab, right? With, like, laser guns and jets packs and a space tank! And we can go break him out of prison! Look at these dead flies! Maybe if we arrange them in a certain order, it plays a hologram or it opens a secret door.
+Morty: Summer, you're freaking me out. I know things have changed a lot, and I know you miss Rick, but getting him back wouldn't make things better. And, you know, we're not doing so bad.
+Summer: We're miserable, Morty! There's a mandatory curfew, their weird calendar made me 47, and they weaponized the Eiffel Tower!
+            </textarea>
+            <br>
+            <br>
+            <button id="btn">Count</button>
+        </form>
         <br>
-        <br>
-        <button id="btn">Count</button>
-    </form>
-    <br>
-    <div class="panel">
-        Count: 
+        <div class="panel col-12">
+            Count: 
+        </div>
+        <div class="words-container col-12 text-break"></div>
     </div>
 </body>
 <script src="script.js"></script>
